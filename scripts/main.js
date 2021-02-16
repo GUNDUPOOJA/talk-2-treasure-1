@@ -32,9 +32,9 @@ window.addEventListener('load', main);
 locationElement.addEventListener('click', locationHandler);
 locationElement.addEventListener('touch', locationHandler);
 
-function main() {
-    console.log('Page is fully loaded');
-}
+// function main() {
+//     console.log('Page is fully loaded');
+// }
 
 let currentlat;
 let currentlon;
