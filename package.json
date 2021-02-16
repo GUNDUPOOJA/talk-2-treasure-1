@@ -1,0 +1,21 @@
+{
+    "name": "talk-2-group-5",
+    "version": "1.0.0",
+    "description": "Talk2App",
+    "main": "app.js",
+    "scripts": {
+      "start": "npm start",
+      "test": "npm run test"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/GUNDUPOOJA/talk-2-group-5.git"
+    },
+    "author": "Rajashekar Gande",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/GUNDUPOOJA/talk-2-group-5/issues"
+    },
+    "homepage": "https://github.com/GUNDUPOOJA/talk-2-group-5#readme"
+  }
+  
