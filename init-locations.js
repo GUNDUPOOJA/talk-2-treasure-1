@@ -1,10 +1,8 @@
-// export default object with the initialization data
-
 export default [
     {
   Name: 'Horizons west apartments',
-   Latitude: 40.35608, 
-   Longitude: -94.88195,
+   Latitude: 40.356410, 
+   Longitude: -94.881740,
   // North: 40.35614, 
   // South: 40.35614, 
   // East: -94.88189,
@@ -19,6 +17,27 @@ export default [
   // West: -98.88805,
   // South: 40.35287, 
   // East: -98.88805,
-}
+},
+{
+Name:'Bell Tower',
+Latitude:40.3398850339421, 
+Longitude:-94.8490055758143,
+},
+{
+Name:'Colden pond',
+Latitude:40.3398850339421, 
+Longitude:-94.8490055758143,
+},
+{
+Name:'Admin Block',
+Latitude:40.35339, 
+Longitude:-94.88357,
+},
+{
+Name:'B.D Owens Library',
+Latitude:40.35385, 
+Longitude:-94.88591,
+},
+
 
 ];
