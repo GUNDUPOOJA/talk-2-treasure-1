@@ -39,7 +39,7 @@ async function locationHandler() {
         if (isInside(value.Latitude, value.Longitude)) {
             document.getElementById("locationAnswer").innerHTML = value.Name;
             let utterance = new SpeechSynthesisUtterance();
-            utterance.text = `Congratulations! From Pooja, You found location ${value.Name}`;
+            utterance.text = `Congratulations! From talk-2-treasure-1 group, You found location ${value.Name}`;
             speechSynthesis.speak(utterance);
             error = false;
         }
@@ -50,7 +50,7 @@ async function locationHandler() {
     if(error) {
        // document.getElementById("error-message").innerHTML = "You're not in the radius range.";
 
-       let innerHTML = "Sorry, You're not in the radius range.";
+       let innerHTML = "Sorry, You are not in target range.";
         document.getElementById("error-message").innerHTML = innerHTML;
         const utterance = new SpeechSynthesisUtterance(innerHTML);
         //utterance.text = `Sorry,You're not in the radius range.`;

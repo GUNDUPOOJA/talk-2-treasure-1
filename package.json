@@ -2,7 +2,7 @@
     "name": "talk-2-group-5",
     "version": "1.0.0",
     "description": "Talk2App",
-    "main": "index.js",
+    "main": "main.js",
     "scripts": {
         "start": "main.js",
         "test": "npm run test"
