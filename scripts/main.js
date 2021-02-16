@@ -1,6 +1,29 @@
 window.addEventListener('load', main);
 let synth = window.speechSynthesis;
 
+function main() {
+    console.log('Page is fully loaded');
+}
+
+async function onClickColor1() {
+    const diceValues = ["1", "2", "3", "4", "5", "6"];
+    const random = Math.floor(Math.random() * diceValues.length);
+    let diceValue = diceValues[random];
+    document.getElementById("randomValue1").innerHTML = diceValue;
+    let speech = new SpeechSynthesisUtterance(response.colorComponent1 + diceValue);
+    synth.speak(speech);
+
+}
+
+async function onClickColor2() {
+    const diceValues = ["1", "2", "3", "4", "5", "6" ];
+    const random = Math.floor(Math.random() * diceValues.length);
+    let diceValue = diceValues[random];
+    document.getElementById("randomValue2").innerHTML = diceValue;
+    let speech = new SpeechSynthesisUtterance(response.colorComponent2 + diceValue);
+    synth.speak(speech);
+    
+}
 import locationsArray from '../init-locations.js';
 
 let locationElement = document.getElementById("location");
@@ -40,7 +63,7 @@ async function locationHandler() {
         if (isInside(value.Latitude, value.Longitude)) {
             document.getElementById("locationAnswer").innerHTML = value.Name;
             const utterance = new SpeechSynthesisUtterance();
-            utterance.text = `Congratulations! From talk-2-group-5, You found location ${value.Name}`;
+            utterance.text = `Congratulations! From Pooja, You found location ${value.Name}`;
             window.speechSynthesis.speak(utterance);
             error = false;
         }
@@ -51,7 +74,7 @@ async function locationHandler() {
     if(error) {
        // document.getElementById("error-message").innerHTML = "You're not in the radius range.";
 
-       let innerHTML = "Sorry, You are not in the radius range to reach target location";
+       let innerHTML = "Sorry, You're not in the radius range.";
         document.getElementById("error-message").innerHTML = innerHTML;
         const utterance = new SpeechSynthesisUtterance(innerHTML);
         //utterance.text = `Sorry,You're not in the radius range.`;
@@ -90,28 +113,4 @@ function distanceBetweenLocations(questLat, questLon) {
 
     const d = R * c;
     return d; 
-}
-
-function main() {
-    console.log('Page is fully loaded');
-}
-
-async function onClickColor1() {
-    const diceValues = ["1", "2", "3", "4", "5", "6"];
-    const random = Math.floor(Math.random() * diceValues.length);
-    let diceValue = diceValues[random];
-    document.getElementById("randomValue1").innerHTML = diceValue;
-    let speech = new SpeechSynthesisUtterance(response.colorComponent1 + diceValue);
-    synth.speak(speech);
-
-}
-
-async function onClickColor2() {
-    const diceValues = ["1", "2", "3", "4", "5", "6" ];
-    const random = Math.floor(Math.random() * diceValues.length);
-    let diceValue = diceValues[random];
-    document.getElementById("randomValue2").innerHTML = diceValue;
-    let speech = new SpeechSynthesisUtterance(response.colorComponent2 + diceValue);
-    synth.speak(speech);
-    
 }
