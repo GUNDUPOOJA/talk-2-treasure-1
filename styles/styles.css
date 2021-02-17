@@ -1,6 +1,5 @@
 article{
     text-align: center;
-
   }
   .header{
     position: relative;
@@ -26,7 +25,8 @@ article{
       width: 50%; 
       display: table-cell; 
       background: rgb(0, 23, 128);
-color: lightsalmon     
+      color: lightsalmon;
+
   }
 
 
