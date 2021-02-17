@@ -1,6 +1,6 @@
 article{
     text-align: center;
-    font-size: medium;
+    /* font-size: medium; */
   }
   .header{
     position: relative;
@@ -27,7 +27,6 @@ article{
       display: table-cell; 
       background: rgb(0, 23, 128);
       text-decoration-color: lightsalmon;
-
   }
 
 
