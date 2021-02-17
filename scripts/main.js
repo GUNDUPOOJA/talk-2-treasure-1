@@ -2,13 +2,15 @@
 import locationsArray from '../init-locations.js';
 
 let locationElement = document.getElementById("location");
+let locationElement2 = document.getElementById("colorSelector1");
+
 
 
 window.addEventListener('load', main);
 locationElement.addEventListener('click', locationHandler);
 locationElement.addEventListener('touch', locationHandler);
-colorElement1.addEventListener('click', colorFunction1);
-colorElement1.addEventListener('touch', colorFunction1);
+locationElement2.addEventListener('click', colorFunction1);
+locationElement2.addEventListener('touch', colorFunction1);
 
 function main() {
     console.log('Page is fully loaded');
@@ -17,6 +19,8 @@ function main() {
 let currentlat;
 let currentlon;
 let error = true;
+
+var target = locationsArray[Math.floor(Math.random()*locationsArray.length)].Name;
 
 // getLocation() function is used to collect the current location
 async function getLocation() {
@@ -51,7 +55,7 @@ async function locationHandler() {
 
     if(error) {
 
-       let innerHTML = "Sorry, You are not in target range.";
+       let innerHTML = "Sorry, You are not in the target range.";
         document.getElementById("error-message").innerHTML = innerHTML;
         const utterance = new SpeechSynthesisUtterance(innerHTML);
         //utterance.text = `Sorry,You're not in the radius range.`;
@@ -91,17 +95,14 @@ function distanceBetweenLocations(questLat, questLon) {
     const d = R * c;
     return d; 
 }
-
 function colorFunction1() {
-    locationsArray.forEach(function (value) {
 
-        if (value.Latitude==target.latitude && value.Longitude==target.longitude) {
-            var name=document.getElementById("locationAnswer").innerHTML = value.Name;
-            document.getElementById("lbl").innerHTML =name ;
-        let utterance = new SpeechSynthesisUtterance(` The Target Location is ${name}`);
+    document.getElementById("colorSelector1").innerHTML = target;
+    let utterance = new SpeechSynthesisUtterance(`Hello! The target location is ${target}`);
     speechSynthesis.speak(utterance);
-            
-        }})
+
+
+}
        
-    }
+    
  
