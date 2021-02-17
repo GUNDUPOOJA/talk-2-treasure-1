@@ -7,6 +7,8 @@ let locationElement = document.getElementById("location");
 window.addEventListener('load', main);
 locationElement.addEventListener('click', locationHandler);
 locationElement.addEventListener('touch', locationHandler);
+colorElement1.addEventListener('click', colorFunction1);
+colorElement1.addEventListener('touch', colorFunction1);
 
 function main() {
     console.log('Page is fully loaded');
@@ -48,7 +50,6 @@ async function locationHandler() {
     // In case of any error where if the device is not 30m range it displays error.
 
     if(error) {
-       // document.getElementById("error-message").innerHTML = "You're not in the radius range.";
 
        let innerHTML = "Sorry, You are not in target range.";
         document.getElementById("error-message").innerHTML = innerHTML;
@@ -90,3 +91,17 @@ function distanceBetweenLocations(questLat, questLon) {
     const d = R * c;
     return d; 
 }
+
+function colorFunction1() {
+    locationsArray.forEach(function (value) {
+
+        if (value.Latitude==target.latitude && value.Longitude==target.longitude) {
+            var name=document.getElementById("locationAnswer").innerHTML = value.Name;
+            document.getElementById("lbl").innerHTML =name ;
+        let utterance = new SpeechSynthesisUtterance(` The Target Location is ${name}`);
+    speechSynthesis.speak(utterance);
+            
+        }})
+       
+    }
+ 

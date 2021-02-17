@@ -1,6 +1,7 @@
 article{
     text-align: center;
-    color: black;
+    color: darkred;
+
   }
   .header{
     position: relative;
@@ -19,6 +20,7 @@ article{
     width: 100%;
     text-align: center;
     background-color:burlywood ;
+  
   }
 
   #colorSelector1{
@@ -32,6 +34,9 @@ article{
   #colorSelector2{
     display: table-cell; 
     background:rgb(174, 174, 180);
+    font-size: medium;
+    font-style: italic;
+    text-decoration-color: brown;
 }
 
 
@@ -62,6 +67,7 @@ article{
       left: 20%;
       -ms-transform: translate(-25%, -25%);
       transform: translate(-25%, -25%);
+      text-decoration-color: brown;
   }
 
   #randomValue2 {
