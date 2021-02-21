@@ -7,6 +7,9 @@
 ## Source repo
 - https://github.com/GUNDUPOOJA/talk-2-treasure-1
 
+## Google Analytics
+- https://analytics.google.com/analytics/web/#/p262093140/realtime/overview?params=_u..nav%3Ddefault
+
 ## Team Members
 <table>
 <td align="center"><a href="https://github.com/Chandupolisetty"><img src="https://avatars.githubusercontent.com/u/60024350?s=400&u=cb542468bdf10c650a7e11753b4a31da8f2aeaa9&v=4" width="100px;" alt=""/><br /><sub><b>Chandrakanth Polisetty (Test Developer)</b></sub></a><br /></td>
