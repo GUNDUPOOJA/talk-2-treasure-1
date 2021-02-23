@@ -20,7 +20,7 @@ let currentlat;
 let currentlon;
 let error = true;
 
-var target = locationsArray[Math.floor(Math.random()*locationsArray.length)].Name;
+var target = locationsArray[Math.floor(Math.random() * locationsArray.length)].Name;
 
 // getLocation() function is used to collect the current location
 async function getLocation() {
@@ -53,9 +53,9 @@ async function locationHandler() {
 
     // In case of any error where if the device is not 30m range it displays error.
 
-    if(error) {
+    if (error) {
 
-       let innerHTML = "Sorry, You are not in the target range.";
+        let innerHTML = "Sorry, You are not in the target range.";
         document.getElementById("error-message").innerHTML = innerHTML;
         const utterance = new SpeechSynthesisUtterance(innerHTML);
         //utterance.text = `Sorry,You're not in the radius range.`;
@@ -72,11 +72,10 @@ async function locationHandler() {
 function isInside(questLat, questLon) {
     let distance = distanceBetweenLocations(questLat, questLon);
     console.log("distance: " + distance);
-        if (distance < 30) 
-        {
+    if (distance < 30) {
         return true;
     }
-     else {
+    else {
         return false;
     }
 }
@@ -95,7 +94,7 @@ function distanceBetweenLocations(questLat, questLon) {
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
     const d = R * c;
-    return d; 
+    return d;
 }
 function colorFunction1() {
 
@@ -105,45 +104,42 @@ function colorFunction1() {
 
 
 }
-function isValid(coordinates){
+function isValid(coordinates) {
     let lat = coordinates.latitude;
     let lon = coordinates.longitude;
 
     // if()
 }
 
-function isValidDevice(device)
-{
-    let deviceCoordinates ={};
+function isValidDevice(device) {
+    let deviceCoordinates = {};
     deviceCoordinates["latitude"] = device.coords.latitude;
-    deviceCoordinates["longitude"]= device.coords.longitude;
+    deviceCoordinates["longitude"] = device.coords.longitude;
 
-    if (isValid(deviceCoordinates)){
+    if (isValid(deviceCoordinates)) {
         return true;
     }
-       else {
-    throw "invalid Device";
-       }
+    else {
+        throw "invalid Device";
+    }
 }
 
-function isValidType(location){
-    if(location.type=="circle"){
+function isValidType(location) {
+    if (location.type == "circle") {
         return true;
     }
-    else{
+    else {
         throw "Invalid Location Type";
     }
 }
 
-function isValidCoordinates(coordinates)
-{
-    if(coordinates.length!=4)
-    {
-    return false;
+function isValidCoordinates(coordinates) {
+    if (coordinates.length != 4) {
+        return false;
     }
 
-    coordinates.forEach(function (coordinate,index){
-        if(!isValid(coordinate)){
+    coordinates.forEach(function (coordinate, index) {
+        if (!isValid(coordinate)) {
 
             return false;
         }
@@ -151,24 +147,24 @@ function isValidCoordinates(coordinates)
     return true;
 }
 
-function isValidLocation(location){
-    if(location.name.length >0 && isValidType(location) && isValidCoordinates(location.coordinates))
-    {    return true;
+function isValidLocation(location) {
+    if (location.name.length > 0 && isValidType(location) && isValidCoordinates(location.coordinates)) {
+        return true;
     }
-    else{
-    throw "Invalid Location";
-}
+    else {
+        throw "Invalid Location";
+    }
 
 }
 
-function isValidArguments(device,location)
-if(device ==null || location == null)
-{
-    throw "Two valid arguments are needed";
+function isValidArguments(device, location) {
+    if (device == null || location == null) {
+        throw "Two valid arguments are needed";
+    }
+    else {
+        return true;
+    }
 }
-else{
-    return true;
-}
-       
-    
- 
+
+
+
