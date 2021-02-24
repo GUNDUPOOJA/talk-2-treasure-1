@@ -22,19 +22,23 @@ function isValid(coordinates) {
   // incomplete function
   let lat = coordinates.latitude;
   let lon = coordinates.longitude;
-
-  // if()
+ 
+    if (lat < -90 || lat > 90 || lon < -180 || lon > 180)
+        return false;
+    else
+        return true;
 }
 
-function isValidDevice(device) {
-  let deviceCoordinates = {};
-  deviceCoordinates["latitude"] = device.coords.latitude;
-  deviceCoordinates["longitude"] = device.coords.longitude;
 
-  if (isValid(deviceCoordinates)) {
+function isValidDevice(device) {
+  // let deviceCoordinates = {};
+  // deviceCoordinates["latitude"] = device.coords.latitude;
+  // deviceCoordinates["longitude"] = device.coords.longitude;
+
+  if (isValid(device.Coordinates)) {
     return true;
   } else {
-    throw "invalid Device";
+    throw new Error(InvalidDevice);
   }
 }
 
@@ -46,28 +50,18 @@ export function isValidType(location) {
   }
 }
 
-function isValidCoordinates(coordinates) {
-  if (coordinates.length != 4) {
-    return false;
-  }
 
-  coordinates.forEach(function (coordinate, index) {
-    if (!isValid(coordinate)) {
-      return false;
-    }
-  });
-  return true;
-}
 
 export function isValidLocation(location) {
   if (
     location.name.length > 0 &&
     isValidType(location) &&
-    isValidCoordinates(location.coordinates)
-  ) {
+    isValidCoordinates(location.coordinates)&& location.radiusMeters==30.0)
+  
     return true;
-  } else {
-    throw "Invalid Location";
+   else 
+  {
+    throw new Error(InvalidLocation);
   }
 }
 
@@ -139,4 +133,25 @@ export default function getLocation() {
   // } else {
   //   return true;
   // }
+
+  export function isInsideCircle(device, location)
+{
+    if(isValidDevice(device)&&isValidLocation(location))
+    {
+        let devLat = device.coords.latitude;
+        let devLon = device.coords.longitude;
+
+        let locLat = location.coordinates[0].latitude;
+        let locLon = location.coordinates[0].longitude;
+
+        if(devLat<=locLat && devLon<=locLon)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+    else
+        return false;
+}
 }
