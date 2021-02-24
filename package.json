@@ -1,28 +1,30 @@
 {
-    "name": "talk-2-group-5",
-    "version": "1.0.0",
-    "description": "Talk2App",
-    "main": "main.js",
-    "scripts": {
-        "start": "main.js",
-        "test": "jest"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/GUNDUPOOJA/talk-2-group-5.git"
-    },
-    "author": "Rajashekar Gande",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/GUNDUPOOJA/talk-2-group-5/issues"
-    },
-    "homepage": "https://github.com/GUNDUPOOJA/talk-2-group-5#readme",
-    "devDependencies": {
-        "jest": "^26.6.3"
-    },
-    "dependencies": {
-        "lint": "^0.7.0",
-        "prettier": "^2.2.1",
-        "test": "^0.6.0"
-    }
+  "name": "talk-2-group-5",
+  "version": "1.0.0",
+  "description": "Talk2App",
+  "main": "main.js",
+  "scripts": {
+    "start": "main.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GUNDUPOOJA/talk-2-group-5.git"
+  },
+  "author": "Rajashekar Gande",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GUNDUPOOJA/talk-2-group-5/issues"
+  },
+  "homepage": "https://github.com/GUNDUPOOJA/talk-2-group-5#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/preset-env": "^7.13.5",
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "lint": "^0.7.0",
+    "prettier": "^2.2.1"
+  }
 }
