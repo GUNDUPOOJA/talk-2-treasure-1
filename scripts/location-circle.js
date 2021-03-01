@@ -92,7 +92,7 @@ export default function getLocation() {
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        // changed all query selectors to getElementById as they are more performant
+        
         document.getElementById("device-lat").innerHTML = "";
         document.getElementById("device-long").innerHTML = "";
         document.getElementById("locationAnswer").innerHTML = "?";
@@ -100,12 +100,12 @@ export default function getLocation() {
         if (position === undefined) {
           document.getElementById("error-message").innerHTML =
             "Browser cannot determine device position (position is undefined).";
-          // added as the rest of the code shouldnt be executed when position is not provided
+          
           return;
         }
 
         const device = position.coords;
-        // changed all query selectors to getElementById as they are more performant
+        
         document.getElementById("device-lat").innerHTML = device.latitude;
         document.getElementById("device-long").innerHTML = device.longitude;
         const arrayLength = locationsArray.length;
@@ -113,7 +113,7 @@ export default function getLocation() {
           const thisLoc = locationsArray[i];
           if (inside(device, thisLoc)) {
             const name = thisLoc.Name;
-            // changed all query selectors to getElementById as they are more performant
+            
             document.getElementById("locationAnswer").innerHTML = name;
             const utterance = new SpeechSynthesisUtterance();
             utterance.text = `Congratulations! from talk-2-treasure-1, You found location ${name}`;
@@ -125,7 +125,7 @@ export default function getLocation() {
       (err) => {
         const s = `ERROR(${err.code}): ${err.message}`;
         console.warn(s);
-        // changed all query selectors to getElementById as they are more performant
+        
         document.getElementById("error-message").innerHTML = err.message;
       },
       options
